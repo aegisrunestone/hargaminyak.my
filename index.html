@@ -10,25 +10,44 @@
   <meta name="robots" content="index,follow" />
   
   <style type="text/css">
-	body { background: #111111; }
+	body { background: #ffffff; font-family:arial;}
 	
+	.container { text-align: center; }
 	.bigbox {
-		width: 600px;
-		background: #ffffff;
+		width: 350px;
 		text-align: center;
 		margin: auto;
 		padding: 20px;
+		color: #ffffff;
+		border: 1px solid #000000;
+		display: inline-block;
 	}
+	
+	.boxron95 { background-color:#eeee00 }
+	.boxron97 { background-color:#119999 }
+	.boxdiesel { background-color:#991111 }
+	
+	.spanfuelname { font-size: 22pt; }
+	.spanprice { font-size: 56pt; }
   </style>
   </head>
 
   <body>
-	<div class="bigbox">
-		<h1>Harga Minyak Terkini di Malaysia</h1>
-		
-		<h2 style="color:#eeee00">RON 95</h2><span>RM 2.30</span>
-		<h2 style="color:#119999">RON 97</h2><span>RM 2.70</span>
-		<h2 style="color:#991111">Diesel</h2><span>RM 2.20</span>
+  <div class="container">
+  <h1>Harga Minyak November 2014</h1>
+  
+	<div class="bigbox boxron95">
+		<h2 class="spanfuelname">RON 95</h2><span class="spanprice">RM 2.30</span>
 	</div>
+	<div class="bigbox boxron97">
+		<h2 class="spanfuelname">RON 97</h2><span class="spanprice">RM 2.70</span>
+	</div>
+	<div class="bigbox boxdiesel">
+		<h2 class="spanfuelname">Diesel</h2><span class="spanprice">RM 2.20</span>
+	</div>
+	
+	<h2></h2>
+	</div>
+	
   </body>
 </html>
