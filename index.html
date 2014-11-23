@@ -22,6 +22,7 @@
 	@media (max-width: 480px) { .fuelbox { width: 100%; } }
 	
 	
+	
 	.fuelbox {
 		color: #111;
 		-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 1px 5px rgba(0, 0, 0, 0.5);
@@ -46,8 +47,10 @@
 		transition: all 0.25s;
 	}
 	
-	.spanfuelname { float: left; font-size:32pt;}
-	.spanprice { float: right; font-size:20pt; line-height: 36pt;}
+	.spanfuelname, .spanprice { color: #fff; text-shadow: black 0px 0px 3px;  }
+
+	.spanfuelname { float: left; font-size:20pt; line-height:36pt }
+	.spanprice { float: right; font-size:32pt; }
 	
 	.fuelstatsbox {
 		margin-top: 20px;
@@ -85,14 +88,26 @@
 		background-color: #292929;
 	}
 	
-	.historicaltable table {
+	.historicaltable .yeartable {
+		
 		text-align: center;
 		background-color: #222;
 		-webkit-box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.1), 0 -1px 0 rgba(0, 0, 0, 0.5);
 		-moz-box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.1), 0 -1px 0 rgba(0, 0, 0, 0.5);
 		box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.1), 0 -1px 0 rgba(0, 0, 0, 0.5);
 	}
+	
+	.accordion-toggle {cursor: pointer;}
+	.accordion-content {display: none;}
+	.accordion-content.default {display: block;}
+	
   </style>
+  <!--[if lt IE 10]>
+	<style type="text/css">
+		.spanfuelname, .spanprice { color: #222 !important;  }
+	</style>
+	<![endif]-->
+	
   </head>
 
   <body class="wrap">
@@ -102,45 +117,27 @@
   <li class="current">
     <a href="/">Home</a>
   </li>
-  <li class="">
-    <a href="/docs/home/">Doc<span class="show-on-mobiles">s</span><span class="hide-on-mobiles">umentation</span></a>
-  </li>
-  <li class="">
-    <a href="/news/">News</a>
-  </li>
-  <li>
-    <a href="https://github.com/jekyll/jekyll-help">Help</a>
-  </li>
-  <li>
-    <a href="https://github.com/jekyll/jekyll"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  <li class="inactive">
+    <a href="#" title="Coming soon">Api</a>
   </li>
 </ul>
 
   </nav>
   <div class="grid">
-    <div class="unit one-third center-on-mobiles">
+    <!--<div class="unit one-third center-on-mobiles">
       <h1>
         <a href="/">
           
         </a>
       </h1>
-    </div>
-    <nav class="main-nav unit two-thirds hide-on-mobiles">
+    </div>-->
+    <nav class="main-nav unit whole hide-on-mobiles">
       <ul>
   <li class="current">
     <a href="/">Home</a>
   </li>
-  <li class="">
-    <a href="/docs/home/">Doc<span class="show-on-mobiles">s</span><span class="hide-on-mobiles">umentation</span></a>
-  </li>
-  <li class="">
-    <a href="/news/">News</a>
-  </li>
-  <li>
-    <a href="https://github.com/jekyll/jekyll-help">Help</a>
-  </li>
-  <li>
-    <a href="https://github.com/jekyll/jekyll"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  <li class="inactive">
+    <a href="#" title="Coming soon">Api</a>
   </li>
 </ul>
 
@@ -150,34 +147,34 @@
 <section class="content">
 <div class="grid">
 	
-  <h1>Nov 2014</h1>
-	<div class="fuelbox boxron95">
-	<div class="fuelboxheader">
+  <h1 style="text-align:center">November 2014</h1>
+	<div class="fuelbox boxron95 accordion">
+	<div class="fuelboxheader accordion-toggle">
 		<h1 class="spanfuelname">RON 95</h1><span class="spanprice">RM 2.30</span>
 		<div class="clearfix"></div>
-		<div class="fuelstatsbox">
+		<div class="fuelstatsbox accordion-content default">
 		<div class="historicaltable">
 		
 		<div class="yeartitle">
 			<span class="yearspan">2013</span>
 		</div>
-		<table>
+		<table class="yeartable">
 		<tbody>
-		<tr><td>Jan</td><td>RM 1.90</td></tr>
-		<tr><td>Feb</td><td>RM 1.90</td></tr>
-		<tr><td>Mar</td><td>RM 1.90</td></tr>
-		<tr><td>Apr</td><td>RM 1.90</td></tr>
-		<tr><td>May</td><td>RM 1.90</td></tr>
-		<tr><td>Jun</td><td>RM 1.90</td></tr>
-		<tr><td>Jul</td><td>RM 1.90</td></tr>
-		<tr><td>Aug</td><td>RM 1.90</td></tr>
-		<tr><td>Sep</td><td>RM 1.90</td></tr>
-		<tr><td>Oct</td><td>RM 1.90</td></tr>
+		<tr><td>Jan</td><td>RM 2.10</td></tr>
+		<tr><td>Feb</td><td>RM 2.10</td></tr>
+		<tr><td>Mar</td><td>RM 2.10</td></tr>
+		<tr><td>Apr</td><td>RM 2.10</td></tr>
+		<tr><td>May</td><td>RM 2.10</td></tr>
+		<tr><td>Jun</td><td>RM 2.10</td></tr>
+		<tr><td>Jul</td><td>RM 2.10</td></tr>
+		<tr><td>Aug</td><td>RM 2.10</td></tr>
+		<tr><td>Sep</td><td>RM 2.10</td></tr>
+		<tr><td>Oct</td><td>RM 2.10</td></tr>
 		<tr><td>Nov</td><td>RM 2.30</td></tr>
 		<tr><td>Dec</td><td>RM 2.30</td></tr>
 		</tbody>
 		</table>
-		<span>test</span>
+		
 		</div>
 	
 	</div>
@@ -233,5 +230,19 @@
 	
 	</div>
 </section>
+
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script>
+/* From http://uniondesign.ca/simple-accordion-without-jquery-ui/ *
+  $('#accordion').find('.accordion-toggle').click(function(){
+
+      //Expand or collapse this panel
+      $(this).find('.accordion-content').slideToggle('fast');
+
+      //Hide the other panels
+      //$(".accordion-content").not($(this).next()).slideUp('fast');
+
+    });*/
+</script>
   </body>
 </html>
