@@ -8,9 +8,13 @@
   <meta name="description" content="Get to know the latest fuel prices for Malaysia. We also provide historical data of Malaysian fuel prices. Come on in, its fuel prices is not going to read itself you know!">
   <meta name="keywords" content="kenaikan harga minyak, harga minyak, harga minyak malaysia, harga minyak naik malaysia, harga petrol malaysia, harga petrol malaysia terkini, harga diesel malaysia, subsidi minyak malaysia, minyak murah malaysia, ron95 malaysia, ron97 malaysia, diesel malaysia, fuel hike malaysia, latest fuel price in malaysia, fuel subsidy malaysia" />
   <meta name="robots" content="index,follow" />
-  
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic,900">
+  <link rel="stylesheet" href="./css/screen.css">
+
   <style type="text/css">
-	body { background: #ffffff; font-family:arial;}
+	/* body { background: #ffffff;
+	font: 300 21px Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	}
 	
 	.container { text-align: center; }
 	.bigbox {
@@ -22,50 +26,228 @@
 		border: 1px solid #000000;
 	}
 	
-	.boxron95 { background-color:#eeee00 }
-	.boxron97 { background-color:#119999 }
-	.boxdiesel { background-color:#991111 }
 	
 	.spanfuelname { font-size: 22pt; }
 	.spanprice { font-size: 56pt; }
 	
-	.historical-table { margin: auto; }
+	.historical-table { margin: auto; }*/
+	
+	.boxron95 { background-color: #fc0;}
+	.boxron97 { background-color: #0f3; }
+	.boxdiesel { background-color:#f22 }
+	
+	
+	.fuelbox {
+		color: #111;
+		-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 1px 5px rgba(0, 0, 0, 0.5);
+		-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 1px 5px rgba(0, 0, 0, 0.5);
+		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 1px 5px rgba(0, 0, 0, 0.5);
+		text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+		
+		width: 460px;
+		margin: auto;
+		padding: 20px 20px;
+		margin-bottom: 20px;
+		
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+		font-weight: 900;
+		font-size: 14px;
+		text-shadow: none;
+		text-transform: uppercase;
+		-webkit-transition: all 0.25s;
+		-moz-transition: all 0.25s;
+		-o-transition: all 0.25s;
+		transition: all 0.25s;
+	}
+	
+	.spanfuelname { float: left; font-size:32pt;}
+	.spanprice { float: right; font-size:20pt; line-height: 36pt;}
+	
+	.fuelstatsbox {
+		margin-top: 20px;
+		padding: 0;
+		background-color: #444;
+		color: #fff;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+		-webkit-box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.1), 0 -1px 0 rgba(0, 0, 0, 0.5);
+		-moz-box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.1), 0 -1px 0 rgba(0, 0, 0, 0.5);
+		box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.1), 0 -1px 0 rgba(0, 0, 0, 0.5);
+	}
+	
+	.fuelstatsbox .yeartitle {
+		position: relative;
+		padding: 10px 30px;
+		font-size: 20pt;
+	}
+	
+	
+	.fuelstatsbox .yearspan {
+		
+	}
+	
+	.historicaltable table tr:hover {
+		background-color: #444;
+	}
+	
+	.historicaltable table tr:nth-child(even):hover {
+		background-color: #494949;
+	}
+	
+	.historicaltable table tr:nth-child(even) {
+		background-color: #292929;
+	}
+	
+	.historicaltable table {
+		text-align: center;
+		background-color: #222;
+		-webkit-box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.1), 0 -1px 0 rgba(0, 0, 0, 0.5);
+		-moz-box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.1), 0 -1px 0 rgba(0, 0, 0, 0.5);
+		box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.1), 0 -1px 0 rgba(0, 0, 0, 0.5);
+	}
   </style>
   </head>
 
-  <body>
-  <div class="container">
+  <body class="wrap">
+  <header>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li class="current">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/docs/home/">Doc<span class="show-on-mobiles">s</span><span class="hide-on-mobiles">umentation</span></a>
+  </li>
+  <li class="">
+    <a href="/news/">News</a>
+  </li>
+  <li>
+    <a href="https://github.com/jekyll/jekyll-help">Help</a>
+  </li>
+  <li>
+    <a href="https://github.com/jekyll/jekyll"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+  </nav>
+  <div class="grid">
+    <div class="unit one-third center-on-mobiles">
+      <h1>
+        <a href="/">
+          
+        </a>
+      </h1>
+    </div>
+    <nav class="main-nav unit two-thirds hide-on-mobiles">
+      <ul>
+  <li class="current">
+    <a href="/">Home</a>
+  </li>
+  <li class="">
+    <a href="/docs/home/">Doc<span class="show-on-mobiles">s</span><span class="hide-on-mobiles">umentation</span></a>
+  </li>
+  <li class="">
+    <a href="/news/">News</a>
+  </li>
+  <li>
+    <a href="https://github.com/jekyll/jekyll-help">Help</a>
+  </li>
+  <li>
+    <a href="https://github.com/jekyll/jekyll"><span class="hide-on-mobiles">View on </span>GitHub</a>
+  </li>
+</ul>
+
+    </nav>
+  </div>
+</header>
+<section class="content">
+<div class="grid">
+	
   <h1>Nov 2014</h1>
-  
-	<div class="bigbox boxron95">
-		<h2 class="spanfuelname">RON 95</h2><span class="spanprice">RM 2.30</span>
-	</div>
-	<div class="historical-table">
-		<table><thead></thead><tbody>
-		<tr class="chart">
-			<td colspan="2"></td>
-		</tr>
-		<tr class="year">
-			<td colspan="2">2013</td>
-		</tr>
+	<div class="fuelbox boxron95">
+	<div class="fuelboxheader">
+		<h1 class="spanfuelname">RON 95</h1><span class="spanprice">RM 2.30</span>
+		<div class="clearfix"></div>
+		<div class="fuelstatsbox">
+		<div class="historicaltable">
+		
+		<div class="yeartitle">
+			<span class="yearspan">2013</span>
+		</div>
+		<table>
+		<tbody>
+		<tr><td>Jan</td><td>RM 1.90</td></tr>
+		<tr><td>Feb</td><td>RM 1.90</td></tr>
+		<tr><td>Mar</td><td>RM 1.90</td></tr>
+		<tr><td>Apr</td><td>RM 1.90</td></tr>
+		<tr><td>May</td><td>RM 1.90</td></tr>
+		<tr><td>Jun</td><td>RM 1.90</td></tr>
+		<tr><td>Jul</td><td>RM 1.90</td></tr>
+		<tr><td>Aug</td><td>RM 1.90</td></tr>
+		<tr><td>Sep</td><td>RM 1.90</td></tr>
+		<tr><td>Oct</td><td>RM 1.90</td></tr>
 		<tr><td>Nov</td><td>RM 2.30</td></tr>
 		<tr><td>Dec</td><td>RM 2.30</td></tr>
-		<tr class="year">
-			<td colspan="2">2014</td>
-		</tr>
-		<tr><td>Jan</td><td>RM 2.30</td></tr>
-		<tr><td>Feb</td><td>RM 2.30</td></tr>
+		</tbody>
+		</table>
+		<span>test</span>
+		</div>
+	
+	</div>
+	</div>
+	</div>
+	
+	
+	<div class="fuelbox boxron97">
+	<div class="fuelboxheader">
+		<h1 class="spanfuelname">RON 97</h1><span class="spanprice">RM 2.30</span>
+		<div class="clearfix"></div>
+		<div class="fuelstatsbox" style="display:none">
+		<div class="historical-table">
 		
-		</tbody></table>
-	</div>
-	<div class="bigbox boxron97">
-		<h2 class="spanfuelname">RON 97</h2><span class="spanprice">RM 2.70</span>
-	</div>
-	<div class="bigbox boxdiesel">
-		<h2 class="spanfuelname">Diesel</h2><span class="spanprice">RM 2.20</span>
-	</div>
+		<div class="yeartitle">
+			<span class="yearspan">2013</span>
+		</div>
+		<table><tbody>
+		<tr><td>Nov</td><td>RM 2.30</td></tr>
+		<tr><td>Dec</td><td>RM 2.30</td></tr>
+		</tbody>
+		</table>
+		
+		</div>
 	
 	</div>
+	</div>
+	</div>
 	
+	
+	<div class="fuelbox boxdiesel">
+	<div class="fuelboxheader">
+		<h1 class="spanfuelname">Diesel</h1><span class="spanprice">RM 2.30</span>
+		<div class="clearfix"></div>
+		<div class="fuelstatsbox" style="display:none">
+		<div class="historical-table">
+		
+		<div class="yeartitle">
+			<span class="yearspan">2013</span>
+		</div>
+		<table><tbody>
+		<tr><td>Nov</td><td>RM 2.30</td></tr>
+		<tr><td>Dec</td><td>RM 2.30</td></tr>
+		</tbody>
+		</table>
+		
+		</div>
+	
+	</div>
+	</div>
+	</div>
+	
+	
+	</div>
+</section>
   </body>
 </html>
