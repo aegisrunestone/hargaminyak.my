@@ -19,7 +19,8 @@
 	.boxdiesel { background-color:#f22 }
 	
 	@media (min-width: 480px) { .fuelbox { width: 460px; } }
-	@media (max-width: 480px) { .fuelbox { width: 100%; } }
+	@media (max-width: 480px) { .fuelbox { width: 95%; } }
+	@media (max-width: 370px) { .spanprice { clear: both; } }
 	
 	
 	
@@ -49,8 +50,8 @@
 	
 	.spanfuelname, .spanprice { color: #fff; text-shadow: black 0px 0px 3px;  }
 
-	.spanfuelname { float: left; font-size:20pt; line-height:36pt }
-	.spanprice { float: right; font-size:32pt; }
+	.spanfuelname { float: left; font-size:20pt; line-height:24pt; }
+	.spanprice { float: right; font-size:36pt; line-height:36pt; }
 	
 	.fuelstatsbox {
 		margin-top: 20px;
@@ -88,10 +89,19 @@
 		background-color: #292929;
 	}
 	
+	.historicaltable .yeartitle:hover {
+		cursor: pointer;
+	}
 	.historicaltable .yeartable {
 		
 		text-align: center;
 		background-color: #222;
+		
+		-webkit-border-radius: 0 0 5px 5px;
+		-moz-border-radius: 0 0 5px 5px;
+		border-radius: 0 0 5px 5px;
+		
+		
 		-webkit-box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.1), 0 -1px 0 rgba(0, 0, 0, 0.5);
 		-moz-box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.1), 0 -1px 0 rgba(0, 0, 0, 0.5);
 		box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.1), 0 -1px 0 rgba(0, 0, 0, 0.5);
@@ -147,17 +157,20 @@
 <section class="content">
 <div class="grid">
 	
-  <h1 style="text-align:center">November 2014</h1>
+  <h1 style="text-align:center; margin-bottom:10px;">November 2014</h1>
 	<div class="fuelbox boxron95 accordion">
-	<div class="fuelboxheader accordion-toggle">
+	<div class="fuelboxheader">
+	<div class="fuelboxtitle accordion-toggle">
 		<h1 class="spanfuelname">RON 95</h1><span class="spanprice">RM 2.30</span>
 		<div class="clearfix"></div>
+	</div>
 		<div class="fuelstatsbox accordion-content default">
 		<div class="historicaltable">
 		
 		<div class="yeartitle">
-			<span class="yearspan">2013</span>
+			<span class="yearspan">2014</span>
 		</div>
+		<div class="yeartablecontainer">
 		<table class="yeartable">
 		<tbody>
 		<tr><td>Jan</td><td>RM 2.10</td></tr>
@@ -174,7 +187,7 @@
 		<!--<tr><td>Dec</td><td>RM 2.30</td></tr>-->
 		</tbody>
 		</table>
-		
+		</div>
 		</div>
 	
 	</div>
@@ -231,7 +244,8 @@
 	</div>
 </section>
 
-<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> -->
+<script src="./js/jquery-1.11.1.min.js"></script>
 <script>
 /* From http://uniondesign.ca/simple-accordion-without-jquery-ui/ *
   $('#accordion').find('.accordion-toggle').click(function(){
@@ -243,6 +257,10 @@
       //$(".accordion-content").not($(this).next()).slideUp('fast');
 
     });*/
+$('.fuelboxtitle').on('click', function(){
+	var $box = $(this);
+	$box.siblings('.fuelstatsbox').slideToggle();
+});
 </script>
   </body>
 </html>
